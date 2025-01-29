@@ -1,0 +1,315 @@
+.robot-eye-left {
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.robot-eye-right {
+  animation: fade-in-out 1s alternate linear infinite;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.robot-nose {
+  animation: little-robot 5s linear infinite;
+}
+
+@keyframes little-robot {
+  0% {
+    top: -30px;
+    left: 250px;
+  }
+  25% {
+    top: 30px;
+    left: 250px;
+  }
+  50% {
+    top: 30px;
+    left: 350px;
+  }
+  75% {
+    top: -30px;
+    left: 350px;
+  }
+  100% {
+    top: -30px;
+    left: 250px;
+  }
+}
+
+.robot-nose::before {
+  animation-name: nostril-eye-before;
+  animation-iteration-count: infinite;
+  animation-duration: 2.7s;
+  animation-timing-function: linear;
+}
+
+.robot-nose::after {
+  animation-name: nostril-eye-after;
+  animation-iteration-count: infinite;
+  animation-duration: 2.7s;
+  animation-timing-function: linear;
+}
+
+@keyframes nostril-eye-before {
+  0% {
+    height: 30px;
+    top: 15px;
+  }
+  10% {
+    height: 0px;
+    top: 30px;
+  }
+  20% {
+    height: 30px;
+    top: 15px;
+  }
+  30% {
+    height: 0px;
+    top: 30px;
+  }
+  40% {
+    height: 30px;
+    top: 15px;
+  }
+  50% {
+    left: 13px;
+  }
+  60% {
+    left: 23px;
+  }
+  70% {
+    left: 13px;
+  }
+  80% {
+    left: 3px;
+  }
+  90% {
+    left: 13px;
+  }
+}
+
+@keyframes nostril-eye-after {
+  0% {
+    height: 30px;
+    top: 15px;
+  }
+  10% {
+    height: 0px;
+    top: 30px;
+  }
+  20% {
+    height: 30px;
+    top: 15px;
+  }
+  30% {
+    height: 0px;
+    top: 30px;
+  }
+  40% {
+    height: 30px;
+    top: 15px;
+  }
+  50% {
+    left: 38px;
+  }
+  60% {
+    left: 48px;
+  }
+  70% {
+    left: 38px;
+  }
+  80% {
+    left: 28px;
+  }
+  90% {
+    left: 38px;
+  }
+}
+
+.robot-ear-right {
+  animation-name: pop-out, fall, enter-right;
+  animation-iteration-count: 1, 1, 1;
+  animation-duration: 1s, 1s, 1s;
+  animation-delay: 3s, 4s, 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.robot-ear-right::before {
+  animation-name: enter-right-before;
+  animation-duration: 1s;
+  animation-delay: 5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pop-out {
+  0% {
+    left: 762px;
+  }
+  100% {
+    left: 800px;
+  }
+}
+
+@keyframes fall {
+  0% {
+    left: 800px;
+    bottom: 380px;
+    opacity: 1;
+  }
+  100% {
+    left: 800px;
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes enter-right {
+  0% {
+    opacity: 0;
+    left: 1000px;
+    bottom: 380px;
+  }
+  90% {
+    opacity: 1;
+    left: 737px;
+    bottom: 380px;
+    background-color: gray;
+    box-shadow: 0 0 0 gold;
+  }
+  100% {
+    opacity: 1;
+    left: 737px;
+    bottom: 380px;
+    background-color: gold;
+    box-shadow: 0 0 100px gold;
+  }
+}
+
+@keyframes enter-right-before {
+  0% {
+    background-color: gray;
+    box-shadow: 0 0 0 gold;
+    clip-path: none;
+  }
+  90% {
+    background-color: gray;
+    box-shadow: 0 0 0 gold;
+    clip-path: none;
+  }
+  100% {
+    background-color: gold;
+    box-shadow: 0 0 100px gold;
+    clip-path: none;
+  }
+}
+
+.robot-ear-left,
+.robot-ear-left::before {
+  animation: blinking 1s alternate infinite;
+  animation-timing-function: steps(1);
+}
+
+.robot-ear-right-fixed,
+.robot-ear-right-fixed::before {
+  animation: blinking 1s alternate infinite;
+  animation-timing-function: steps(1);
+  animation-delay: 1s;
+}
+
+@keyframes blinking {
+  0% {
+    background-color: gold;
+    box-shadow: 0 0 100px gold;
+  }
+  50% {
+    background-color: gray;
+    box-shadow: 0 0 0 gray;
+  }
+}
+
+.robot-hair-style {
+  transition: width 5s, height 5s, bottom 5s, left 5s;
+}
+
+.robot-hair-style:hover {
+  width: 400px;
+  height: 160px;
+  bottom: 800px;
+  left: 160px;
+}
+
+.robot-tooth:nth-child(1),
+.robot-tooth:nth-child(2),
+.robot-tooth:nth-child(3),
+.robot-tooth:nth-child(4),
+.robot-tooth:nth-child(5),
+.robot-tooth:nth-child(6) {
+  animation: upper-saw-tooth 1s linear infinite;
+}
+
+@keyframes upper-saw-tooth {
+  0% {
+    position: relative;
+    left: 0;
+  }
+  100% {
+    position: relative;
+    left: 280%;
+  }
+}
+
+.robot-tooth:nth-child(7),
+.robot-tooth:nth-child(8),
+.robot-tooth:nth-child(9),
+.robot-tooth:nth-child(10),
+.robot-tooth:nth-child(11),
+.robot-tooth:nth-child(12) {
+  animation: lower-saw-tooth 1s linear infinite;
+}
+
+@keyframes lower-saw-tooth {
+  0% {
+    position: relative;
+    right: 0;
+  }
+  100% {
+    position: relative;
+    right: 280%;
+  }
+}
+
+.robot-teeth {
+  animation: open-close-mouth 1s linear infinite;
+}
+
+@keyframes open-close-mouth {
+  0% {
+    clip-path: ellipse(50% 50%);
+    row-gap: 18px;
+  }
+  50% {
+    clip-path: ellipse(45% 25%);
+    row-gap: 9px;
+  }
+  100% {
+    clip-path: ellipse(50% 50%);
+    row-gap: 18px;
+  }
+}

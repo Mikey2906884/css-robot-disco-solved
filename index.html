@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/animations.css" />
+    <script>
+      const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+      async function changeClass() {
+        await delay(6000);
+
+        document
+          .getElementById("right-ear")
+          .classList.remove("robot-ear-right");
+        document
+          .getElementById("right-ear")
+          .classList.add("robot-ear-right-fixed");
+      }
+
+      changeClass();
+    </script>
     <title>Fancy Robot Face</title>
   </head>
   <body>
@@ -29,7 +45,7 @@
         </div>
       </div>
       <div class="robot-ear-left"></div>
-      <div class="robot-ear-right"></div>
+      <div class="robot-ear-right" id="right-ear"></div>
       <div class="robot-hair-style">
         <div class="robot-hair-one"></div>
         <div class="robot-hair-two"></div>
